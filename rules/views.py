@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Rule
 
 def welcome(request):
-    return render(request=request, template_name='rules/rules.html')
+    rules = Rule.objects.filter(status=True)
+    context = {'rules': rules}
+    return render(request=request, 
+                  template_name='rules/rules.html',
+                  context=context)
