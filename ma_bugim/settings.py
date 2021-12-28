@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-n_w^ow0isno1h@67yffllc*jkc@ljqtduzvhpy^d9!zidokr-4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mabugim.eu.pythonanywhere.com',]
+ALLOWED_HOSTS = [
+    'mabugim.eu.pythonanywhere.com',
+    '127.0.0.1',
+    'localhost',]
 
 
 # Application definition
@@ -55,8 +58,8 @@ ROOT_URLCONF = 'ma_bugim.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates/'],
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
