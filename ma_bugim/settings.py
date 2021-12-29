@@ -130,7 +130,4 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if DEBUG:
-    STATIC_ROOT = ''
-else:
-    STATIC_ROOT = '/home/mabugim/ma_bugim/static/'
+STATIC_ROOT = BASE_DIR / 'static/'
