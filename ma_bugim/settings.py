@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = [
     'mabugim.eu.pythonanywhere.com',
@@ -129,4 +129,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# STATIC_ROOT = '/home/mabugim/ma_bugim/static/'
+if DEBUG:
+    STATIC_ROOT = ''
+else:
+    STATIC_ROOT = '/home/mabugim/ma_bugim/static/'
