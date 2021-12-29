@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from django.views import View
 
-# Create your views here.
+from .models import Message
+
+class SendePrivateMessage(View):
+    def get(self, request, *args, **kwargs):
+        
+    
